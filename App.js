@@ -17,9 +17,28 @@ import ReactDOM from "react-dom";
 
 // console.log(parent);
 
-const jsxheading = (
-<h1>
-    Hello world by jsx
-</h1>);
-const root = ReactDOM.createRoot(document.getElementById("root"));
-root.render(jsxheading);
+// // // using JSX, react element--->
+// const jsxheading = (
+// <h1>
+//     Hello world by jsx
+// </h1>);
+// const root = ReactDOM.createRoot(document.getElementById("root"));
+// root.render(jsxheading);
+
+// // // using react component-->
+const Title=()=>(
+    <h1>how r u</h1>
+);
+const num=100;
+const HeadingComponent=()=>{
+    return (
+    <div>
+        {jsxheading}         {/*using rect element inside react component */}
+        <Title/>            {/*componet composition- component inside component */}
+        {Title()}
+        {num};
+        <h1>Hello world by react componet</h1>
+    </div>);
+};
+const root=ReactDOM.createRoot(document.getElementById( "root"));
+root.render(<HeadingComponent/>)
